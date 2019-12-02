@@ -6,24 +6,9 @@ import axios from "axios";
       super();
       this.state = {
         note: "",
-        image: ""
+        image: "",
+        alt: ""
       };
-    }
-
-    getImage = e => {
-      axios({
-        url: `https://api.unsplash.com/photos/random`,
-        method: `GET`,
-        dataResponse: `json`,
-        params: {
-          client_id: `3538ec3e67ff5208b17b884280d4f5548757cf54956c39cbe73c070ec5442549`
-        }
-      }).then(response => {
-        console.log(response);
-        this.setState({
-          allzards: response.data
-        });
-      });
     }
 
     handleChange = e => {
@@ -34,16 +19,17 @@ import axios from "axios";
     };
 
     handleSubmit = e => {
-      //push user input to db
-      this.props.newNoteProp(e, this.state.note);
-
       //make api call for image
-      this.getImage();
+      // this.getImage();
+      
+      //push user input to db
+        this.props.newNoteProp(e, this.state.note);
 
-      //reset the user input fields
-      this.setState({
-        note: ""
-      });
+        //reset the user input fields
+        this.setState({
+          note: ""
+        });
+      
     };
 
     render() {
