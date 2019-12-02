@@ -24,7 +24,7 @@ class App extends Component {
       const notes = snapshot.val();
       const notesArray = Object.entries(notes)
       // console.log(Object.entries(notes));
-      console.log(notesArray);
+      // console.log(notesArray);
     
       this.setState({
         notes: notesArray
@@ -89,7 +89,7 @@ class App extends Component {
             {
               this.state.notes.map((note) => {
                 return (
-                  <Notes noteText={note[1].note} noteId={note[0]} newCommentProp={this.addNewComment} displayCommentsProp=""/>
+                  <Notes noteText={note[1].note} key={note[0]} savedComments={note[1].comments} newCommentProp={this.addNewComment} />
                   
                 )
               })

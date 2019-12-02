@@ -4,9 +4,9 @@ class Comment extends Component {
 
     render() {
         return (
-                <p>
-                    
-                </p>
+            <div>
+                {this.props.commentText}
+            </div>
         );
     }
 }
