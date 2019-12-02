@@ -84,17 +84,26 @@ textarea {
 }
 
 .commentButton {
-  /* display: none; */
+  display: none;
+  visibility: hidden;
   width: 35px;
   height: 35px;
   font-size: 3rem;
   margin-top: 15px;
+}
 
+.commentButton:focus,
+.commentButton:active {
+  display: flex;
+  visibility: visible;
 }
 
 .comment textarea:focus + .commentButton{
   display: flex;
+  visibility: visible;
 }
+
+
 
 .comments {
   border-top: 1px solid lightgray;
