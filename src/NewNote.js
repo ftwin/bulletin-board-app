@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import firebase from './Firebase.js';
 
   class NewNote extends Component {
     constructor() {
@@ -7,7 +8,8 @@ import axios from "axios";
       this.state = {
         note: "",
         image: "",
-        alt: ""
+        alt: "",
+        errorMessage: ""
       };
     }
 
@@ -19,17 +21,40 @@ import axios from "axios";
     };
 
     handleSubmit = e => {
-      //make api call for image
-      // this.getImage();
-      
-      //push user input to db
-        this.props.newNoteProp(e, this.state.note);
+      e.preventDefault()
 
+      const dbRef = firebase.database().ref();
+
+      //check that input isn't empty then make api call for image then push to db
+      if (noteContent !== "") {
+        axios({
+          url: `https://api.unsplash.com/photos/random`,
+          method: `GET`,
+          dataResponse: `json`,
+          params: {
+            client_id: `3538ec3e67ff5208b17b884280d4f5548757cf54956c39cbe73c070ec5442549`,
+            query: `cat`
+          }
+        }).then(response => {
+          this.setState({
+            image: response.data.urls.small,
+            alt: response.data.alt_description
+          });
+
+          dbRef.push({ comments: "", note: this.state.note, image: this.state.image, altText: this.state.alt });
+
+        });
         //reset the user input fields
         this.setState({
-          note: ""
+          note: "",
+          errorMessage: ""
         });
-      
+
+      } else {
+        this.setState({
+          errorMessage: "please enter a comment"
+        })
+      };       
     };
 
     render() {
