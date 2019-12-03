@@ -163,7 +163,6 @@ textarea:focus {
   display: flex;
   position: relative;
   left: 0;
-  opacity: 100%;
 }
 
 .comments {
