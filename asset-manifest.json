@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/lou-chaney-project5/static/css/main.7c864a82.chunk.css",
+    "main.css": "/lou-chaney-project5/static/css/main.811e9bb0.chunk.css",
     "main.js": "/lou-chaney-project5/static/js/main.c06ce20c.chunk.js",
     "main.js.map": "/lou-chaney-project5/static/js/main.c06ce20c.chunk.js.map",
     "runtime-main.js": "/lou-chaney-project5/static/js/runtime-main.b4f1665a.js",
@@ -8,14 +8,14 @@
     "static/js/2.e9d0bafe.chunk.js": "/lou-chaney-project5/static/js/2.e9d0bafe.chunk.js",
     "static/js/2.e9d0bafe.chunk.js.map": "/lou-chaney-project5/static/js/2.e9d0bafe.chunk.js.map",
     "index.html": "/lou-chaney-project5/index.html",
-    "precache-manifest.dd3f5235c90066adc199aad8d5a7b013.js": "/lou-chaney-project5/precache-manifest.dd3f5235c90066adc199aad8d5a7b013.js",
+    "precache-manifest.d64ef6dd7b7aef937035f16f09435bb1.js": "/lou-chaney-project5/precache-manifest.d64ef6dd7b7aef937035f16f09435bb1.js",
     "service-worker.js": "/lou-chaney-project5/service-worker.js",
-    "static/css/main.7c864a82.chunk.css.map": "/lou-chaney-project5/static/css/main.7c864a82.chunk.css.map"
+    "static/css/main.811e9bb0.chunk.css.map": "/lou-chaney-project5/static/css/main.811e9bb0.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.b4f1665a.js",
     "static/js/2.e9d0bafe.chunk.js",
-    "static/css/main.7c864a82.chunk.css",
+    "static/css/main.811e9bb0.chunk.css",
     "static/js/main.c06ce20c.chunk.js"
   ]
 }
