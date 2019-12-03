@@ -39,14 +39,14 @@ class App extends Component {
             <NewNote newNoteProp={this.addNewNote} />
           </div>
           {
-            this.state.notes.map((note) => {
+            this.state.notes.reverse().map((note) => {
               return (
                 <Notes 
                   noteText={note[1].note} 
                   key={note[0]} 
                   noteId={note[0]}
                   noteImage={note[1].image}
-                  noteAltText={note[1].altText}
+                  altText={note[1].altText}
                   savedComments={note[1]} 
                   newCommentProp={this.addNewComment} 
                 />
@@ -55,7 +55,7 @@ class App extends Component {
             })
           }          
         </main>
-        <footer><p>Copyright Lou Chaney 2019</p></footer>
+        <footer><p>Copyright <a href="https://www.louchaney.com">Lou Chaney</a> 2019</p></footer>
       </div>
     );
   }

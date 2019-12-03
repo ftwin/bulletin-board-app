@@ -20,11 +20,12 @@ body {
 }
 
 h1 {
-  margin: 0;
+  margin: 0 auto;
   text-align: center;
   font-family: 'Major Mono Display', monospace;
   font-size: 4rem;
   margin-bottom: 20px;
+  width: 80%;
 }
 
 img {
@@ -52,6 +53,47 @@ li {
   column-gap: 40px;
 }
 
+@media (max-width: 1200px) {
+  .wrapper {
+    column-count: 2;
+    column-gap: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .wrapper {
+    width: 80%;
+    column-count: 1;
+  }
+
+  h1 {
+    width: 60%;
+  }
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    width: 90%;
+    column-count: 1;
+  }
+
+  h1 {
+    width: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+
+  h1 {
+    padding-top: 20px;
+  }
+  .wrapper {
+    padding-top: 0;
+    width: 100%;
+    column-count: 1;
+  }
+}
+
 .wrapper div {
   width: 100%;
   display: inline-block;
@@ -63,6 +105,12 @@ li {
   background-color: white;
   padding: 20px;
   margin-bottom: 40px;
+}
+
+@media (max-width: 500px) {
+  .newNote {
+    padding: 0;
+  }
 }
 
 .noteContent {
@@ -84,6 +132,10 @@ textarea {
   padding: 5px;
   resize: none;
   width: 100%;
+}
+
+textarea:focus {
+  border: 1px solid rgb(255, 154, 136);
 }
 
 .error {
@@ -142,15 +194,25 @@ button {
 
 button:hover,
 button:focus {
-  background: grey;
+  background: tomato;
   color: white;
   font-weight: bold; 
+  border: 1px solid tomato;
 }
 
 footer {
   font-family: 'Major Mono Display', monospace;
-  background: grey;
-  color: white;
+  background: rgb(196, 196, 196);
   text-align: center;
   padding: 5px 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+a:hover,
+a:focus {
+  color: tomato;
 }

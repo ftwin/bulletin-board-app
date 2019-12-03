@@ -65,6 +65,7 @@ import firebase from './Firebase.js';
           </div>
           <div className="comment">
             <form action="">
+              <label for="comment" className="visuallyHidden">Add your comment here</label>
               {this.state.errorMessage !== '' ? <div className="error">{this.state.errorMessage}</div> : ''}
               <textarea onChange={this.handleChange} name="comment" id="comment" cols="30" rows="3" placeholder="comment" value={this.state.comment}></textarea>
               <button className="commentButton" onClick={this.handleSubmit} name="addNote" id="addNote" aria-label="add comment">+</button>
@@ -72,7 +73,7 @@ import firebase from './Firebase.js';
           </div>
 
             {
-              commentsArray2.map((comment) => {
+              commentsArray2.reverse().map((comment) => {
 
                 return (
                   <Comment key={comment[0]} noteId={this.props.noteId} commentText={comment[1]} />

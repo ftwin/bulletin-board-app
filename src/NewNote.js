@@ -39,8 +39,9 @@ import firebase from './Firebase.js';
             query: `cat`
           }
         }).then(response => {
+          console.log(response);
           this.setState({
-            image: response.data.urls.small,
+            image: response.data.urls.regular,
             alt: response.data.alt_description
           });
 
@@ -65,6 +66,7 @@ import firebase from './Firebase.js';
       return (
         <div className="newNote">
           <form action="">
+            <label for="newNote" className="visuallyHidden" >Add your note here</label>
             {this.state.errorMessage !== '' ? <div className="error">{this.state.errorMessage}</div> : ''}
             <textarea onChange={this.handleChange} value={this.state.note} rows="12" cols="30" name="newNote" id="newNote" placeholder="add your note here"
             ></textarea>
