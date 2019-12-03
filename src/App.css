@@ -48,10 +48,6 @@ li {
   padding-top: 20px;
   margin: 0 auto;
   width: 95%;
-  /* display: flex;
-  flex-wrap: wrap;
-  align-items: space-between;
-  position: relative; */
   column-count: 3;
   column-gap: 40px;
 }
@@ -149,4 +145,12 @@ button:focus {
   background: grey;
   color: white;
   font-weight: bold; 
+}
+
+footer {
+  font-family: 'Major Mono Display', monospace;
+  background: grey;
+  color: white;
+  text-align: center;
+  padding: 5px 0;
 }

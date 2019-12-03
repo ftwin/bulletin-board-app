@@ -15,9 +15,12 @@ import firebase from './Firebase.js';
 
     handleChange = e => {
       this.setState({
+        //reset error message
+        errorMessage: "",
         //record the user input
         note: e.target.value
       });
+      console.log(this.state.note);
     };
 
     handleSubmit = e => {
@@ -26,7 +29,7 @@ import firebase from './Firebase.js';
       const dbRef = firebase.database().ref();
 
       //check that input isn't empty then make api call for image then push to db
-      if (noteContent !== "") {
+      if (this.state.note !== "") {
         axios({
           url: `https://api.unsplash.com/photos/random`,
           method: `GET`,
@@ -43,27 +46,29 @@ import firebase from './Firebase.js';
 
           dbRef.push({ comments: "", note: this.state.note, image: this.state.image, altText: this.state.alt });
 
-        });
-        //reset the user input fields
-        this.setState({
-          note: "",
-          errorMessage: ""
+          //reset the user input fields
+          this.setState({
+            note: "",
+            errorMessage: ""
+          });
         });
 
       } else {
         this.setState({
-          errorMessage: "please enter a comment"
+          errorMessage: "please enter a note"
         })
       };       
     };
 
     render() {
+
       return (
         <div className="newNote">
           <form action="">
+            {this.state.errorMessage !== '' ? <div className="error">{this.state.errorMessage}</div> : ''}
             <textarea onChange={this.handleChange} value={this.state.note} rows="12" cols="30" name="newNote" id="newNote" placeholder="add your note here"
             ></textarea>
-            <button onClick={this.handleSubmit} name="addNote" id="addNote">
+            <button onClick={this.handleSubmit} name="addNote" id="addNote" aria-label="add note">
               +
             </button>
           </form>

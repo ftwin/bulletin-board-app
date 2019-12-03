@@ -15,6 +15,8 @@ import firebase from './Firebase.js';
 
     handleChange = e => {
       this.setState({
+        //reset error message
+        errorMessage: "",
         //record the user input
         comment: e.target.value
       });
@@ -65,7 +67,7 @@ import firebase from './Firebase.js';
             <form action="">
               {this.state.errorMessage !== '' ? <div className="error">{this.state.errorMessage}</div> : ''}
               <textarea onChange={this.handleChange} name="comment" id="comment" cols="30" rows="3" placeholder="comment" value={this.state.comment}></textarea>
-              <button className="commentButton" onClick={this.handleSubmit} name="addNote" id="addNote" >+</button>
+              <button className="commentButton" onClick={this.handleSubmit} name="addNote" id="addNote" aria-label="add comment">+</button>
             </form>
           </div>
 

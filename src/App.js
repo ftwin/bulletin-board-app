@@ -3,7 +3,6 @@ import './App.css';
 import firebase from './Firebase.js';
 import Notes from './Note.js';
 import NewNote from './NewNote.js';
-import axios from 'axios';
 
 class App extends Component {
   constructor(){
@@ -31,42 +30,10 @@ class App extends Component {
   }
 
 
-  //when new note form submitted
-  addNewNote = (e, noteContent) => {
-    e.preventDefault()
-
-    const dbRef = firebase.database().ref();
-
-    //check that input isn't empty then make api call for image then push to db
-    if(noteContent !== "") {
-      axios({
-        url: `https://api.unsplash.com/photos/random`,
-        method: `GET`,
-        dataResponse: `json`,
-        params: {
-          client_id: `3538ec3e67ff5208b17b884280d4f5548757cf54956c39cbe73c070ec5442549`,
-          query: `cat`
-        }
-      }).then(response => {
-        console.log(response);
-        this.setState({
-          image: response.data.urls.small,
-          alt: response.data.alt_description
-        });
-
-        dbRef.push({comments: "", note: noteContent, image: this.state.image, altText: this.state.alt});
-
-        console.log(this.state.image, this.state.alt);
-      });
-    }
-
-    
-  }
-
   render(){
     return (
       <div className="container">
-        <div className="wrapper">
+        <main className="wrapper">
           <div className="info">
             <h1>Bulletin Board</h1>
             <NewNote newNoteProp={this.addNewNote} />
@@ -86,8 +53,9 @@ class App extends Component {
                 
               )
             })
-          }            
-        </div>
+          }          
+        </main>
+        <footer><p>Copyright Lou Chaney 2019</p></footer>
       </div>
     );
   }
