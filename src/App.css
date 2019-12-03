@@ -145,7 +145,6 @@ textarea:focus {
 
 .commentButton {
   position: absolute;
-  opacity: 0;
   left: -1000000000px;
   width: 35px;
   height: 35px;
@@ -158,7 +157,6 @@ textarea:focus {
   display: flex;
   position: relative;
   left: 0;
-  opacity: 100%;
 }
 
 .comment textarea:focus + .commentButton{
