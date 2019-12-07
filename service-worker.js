@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/lou-chaney-project5/precache-manifest.61810f788f656995c043002853e52356.js"
+  "/lou-chaney-project5/precache-manifest.6db979a1132e5b9c7e52be63b048aa0a.js"
 );
 
 self.addEventListener('message', (event) => {
