@@ -26,10 +26,12 @@ import firebase from './Firebase.js';
     handleSubmit = e => {
       e.preventDefault()
 
+      
       const dbRef = firebase.database().ref();
+      const regEx = /\S/;
 
       //check that input isn't empty then make api call for image then push to db
-      if (this.state.note !== "") {
+      if (regEx.test(this.state.note)) {
         axios({
           url: `https://api.unsplash.com/photos/random`,
           method: `GET`,
@@ -39,7 +41,6 @@ import firebase from './Firebase.js';
             query: `cat`
           }
         }).then(response => {
-          console.log(response);
           this.setState({
             image: response.data.urls.regular,
             alt: response.data.alt_description
@@ -66,7 +67,7 @@ import firebase from './Firebase.js';
       return (
         <div className="newNote">
           <form action="">
-            <label for="newNote" className="visuallyHidden" >Add your note here</label>
+            <label htmlFor="newNote" className="visuallyHidden" >Add your note here</label>
             {this.state.errorMessage !== '' ? <div className="error">{this.state.errorMessage}</div> : ''}
             <textarea onChange={this.handleChange} value={this.state.note} rows="12" cols="30" name="newNote" id="newNote" placeholder="add your note here"
             ></textarea>

@@ -25,7 +25,10 @@ import firebase from './Firebase.js';
 
     handleSubmit = e => {
       e.preventDefault()
-      if (this.state.comment !== "") {
+
+      const regEx = /\S/;
+
+      if (regEx.test(this.state.comment)) {
         //push comment to db
         firebase.database().ref(this.props.noteId).child('comments').push(this.state.comment);
         //reset error message
@@ -65,9 +68,9 @@ import firebase from './Firebase.js';
           </div>
           <div className="comment">
             <form action="">
-              <label for="comment" className="visuallyHidden">Add your comment here</label>
+              <label className="commentLabel" htmlFor={this.props.noteId + "comment"}>Add your comment here</label>
               {this.state.errorMessage !== '' ? <div className="error">{this.state.errorMessage}</div> : ''}
-              <textarea onChange={this.handleChange} name="comment" id="comment" cols="30" rows="3" placeholder="comment" value={this.state.comment}></textarea>
+              <textarea onChange={this.handleChange} name="comment" id={this.props.noteId + "comment"} cols="30" rows="3"  value={this.state.comment}></textarea>
               <button className="commentButton" onClick={this.handleSubmit} name="addNote" id="addNote" aria-label="add comment">+</button>
             </form>
           </div>
