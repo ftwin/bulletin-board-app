@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/bulletin-board-app/static/css/main.518b5aca.chunk.css",
-    "main.js": "/bulletin-board-app/static/js/main.18d3b568.chunk.js",
-    "main.js.map": "/bulletin-board-app/static/js/main.18d3b568.chunk.js.map",
+    "main.css": "/bulletin-board-app/static/css/main.c4245d4e.chunk.css",
+    "main.js": "/bulletin-board-app/static/js/main.65bec5e5.chunk.js",
+    "main.js.map": "/bulletin-board-app/static/js/main.65bec5e5.chunk.js.map",
     "runtime-main.js": "/bulletin-board-app/static/js/runtime-main.38ff0153.js",
     "runtime-main.js.map": "/bulletin-board-app/static/js/runtime-main.38ff0153.js.map",
     "static/js/2.b11015f6.chunk.js": "/bulletin-board-app/static/js/2.b11015f6.chunk.js",
     "static/js/2.b11015f6.chunk.js.map": "/bulletin-board-app/static/js/2.b11015f6.chunk.js.map",
     "index.html": "/bulletin-board-app/index.html",
-    "precache-manifest.3223d4be0f6f6b037bc2f41e14214a04.js": "/bulletin-board-app/precache-manifest.3223d4be0f6f6b037bc2f41e14214a04.js",
+    "precache-manifest.b1499abac7ceb7ede7742f1fd218c220.js": "/bulletin-board-app/precache-manifest.b1499abac7ceb7ede7742f1fd218c220.js",
     "service-worker.js": "/bulletin-board-app/service-worker.js",
-    "static/css/main.518b5aca.chunk.css.map": "/bulletin-board-app/static/css/main.518b5aca.chunk.css.map"
+    "static/css/main.c4245d4e.chunk.css.map": "/bulletin-board-app/static/css/main.c4245d4e.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.38ff0153.js",
     "static/js/2.b11015f6.chunk.js",
-    "static/css/main.518b5aca.chunk.css",
-    "static/js/main.18d3b568.chunk.js"
+    "static/css/main.c4245d4e.chunk.css",
+    "static/js/main.65bec5e5.chunk.js"
   ]
 }
