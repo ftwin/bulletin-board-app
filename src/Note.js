@@ -54,9 +54,7 @@ import firebase from './Firebase.js';
     
 
     render() {
-      const commentsArray = Object.entries(this.props.savedComments)
-      console.log(commentsArray);
-      const commentsArray2 = Object.entries(commentsArray[2][1])
+      const commentsArray = Object.entries(this.props.savedComments.comments);
       return (
         <div className="note">
           <div>
@@ -77,7 +75,7 @@ import firebase from './Firebase.js';
           </div>
 
             {
-              commentsArray2.reverse().map((comment) => {
+              commentsArray.reverse().map((comment) => {
 
                 return (
                   <Comment key={comment[0]} noteId={this.props.noteId} commentText={comment[1]} />

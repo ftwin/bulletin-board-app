@@ -18,7 +18,6 @@ useEffect(()=> {
     const notesVal = snapshot.val();
     let notes = Object.entries(notesVal);
     notes = notes.map(note => ({id: note[0], ...note[1]})).reverse();
-    console.log(notes);
     setNotes(notes);
   })
 },[]);
@@ -39,6 +38,7 @@ useEffect(()=> {
       <main className="wrapper">
         <div className="info">
           <h1>Bulletin Board</h1>
+          <NewNote/>
         </div>
         {
           notes.map((note, index) => {
@@ -49,8 +49,7 @@ useEffect(()=> {
                 noteId={note.id}
                 noteImage={note.image}
                 altText={note.altText}
-                savedComments={note} 
-                // newCommentProp={this.addNewComment} 
+                savedComments={note}
               />
               
             )
