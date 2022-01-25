@@ -7,31 +7,18 @@ import NewNote from './NewNote.js';
 const App = () => {
 
   const [notes, setNotes ] = useState([]);
-  const [image, setImage ] = useState("");
-  const [alt, setAlt ] = useState("");
 
   
   //connect app to firebase
-useEffect(()=> {
-  const dbRef = firebase.database().ref();
-  dbRef.on('value', (snapshot) =>{
-    const notesVal = snapshot.val();
-    let notes = Object.entries(notesVal);
-    notes = notes.map(note => ({id: note[0], ...note[1]})).reverse();
-    setNotes(notes);
-  })
-},[]);
-
-// const dbRef = firebase.database().ref();
-
-//     //listen on the dbRef for when the value changes
-//     dbRef.on('value', (snapshot) =>{
-//       const notes = snapshot.val();
-//       const notesArray = Object.entries(notes)    
-//       this.setState({
-//         notes: notesArray
-//       })
-//     })
+  useEffect(()=> {
+    const dbRef = firebase.database().ref();
+    dbRef.on('value', (snapshot) =>{
+      const notesVal = snapshot.val();
+      let notes = Object.entries(notesVal);
+      notes = notes.map(note => ({id: note[0], ...note[1]})).reverse();
+      setNotes(notes);
+    })
+  },[]);
 
   return (
     <div className="container">

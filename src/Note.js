@@ -79,8 +79,6 @@ import firebase from './Firebase.js';
 
                 return (
                   <Comment key={comment[0]} noteId={this.props.noteId} commentText={comment[1]} />
-                  // <Comment key=
-
                 )
               })
             }      
