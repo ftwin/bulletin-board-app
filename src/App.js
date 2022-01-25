@@ -23,6 +23,17 @@ useEffect(()=> {
   })
 },[]);
 
+// const dbRef = firebase.database().ref();
+
+//     //listen on the dbRef for when the value changes
+//     dbRef.on('value', (snapshot) =>{
+//       const notes = snapshot.val();
+//       const notesArray = Object.entries(notes)    
+//       this.setState({
+//         notes: notesArray
+//       })
+//     })
+
   return (
     <div className="container">
       <main className="wrapper">

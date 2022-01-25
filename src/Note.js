@@ -55,7 +55,8 @@ import firebase from './Firebase.js';
 
     render() {
       const commentsArray = Object.entries(this.props.savedComments)
-      const commentsArray2 = Object.entries(commentsArray[1][1])
+      console.log(commentsArray);
+      const commentsArray2 = Object.entries(commentsArray[2][1])
       return (
         <div className="note">
           <div>
