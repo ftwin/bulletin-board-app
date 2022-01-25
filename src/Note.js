@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import Comment from "./Comment"
+import Comment from "./Comment"
 import firebase from './Firebase.js';
 
   class Notes extends Component {
@@ -75,7 +75,7 @@ import firebase from './Firebase.js';
             </form>
           </div>
 
-            {/* {
+            {
               commentsArray2.reverse().map((comment) => {
 
                 return (
@@ -84,7 +84,7 @@ import firebase from './Firebase.js';
 
                 )
               })
-            }       */}
+            }      
         </div>
         
       );
