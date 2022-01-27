@@ -36,7 +36,7 @@ const App = () => {
                 noteId={note.id}
                 noteImage={note.image}
                 altText={note.altText}
-                savedComments={note}
+                savedComments={note.comments}
               />
               
             )
